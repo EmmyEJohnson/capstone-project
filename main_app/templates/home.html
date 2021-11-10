@@ -1,0 +1,117 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+
+<!--CAROUSEL-->
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
+            <img class="carousel-image" src="https://wayfarer-pythonic-lava.s3.us-west-1.amazonaws.com/splash/mercantile-colorado.jpg" />
+            <!-- <div class="container">
+                <div class="carousel-caption text-end">
+                    <h1>Lago di Braies</h1>
+                    <p>Italy</p>
+                </div>
+            </div> -->
+        </div>
+        <div class="carousel-item">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
+            <img class="carousel-image" src="https://wayfarer-pythonic-lava.s3.us-west-1.amazonaws.com/splash/belgium.jpg" />
+            <!-- <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>Kyoto</h1>
+                    <p>Japan</p>
+                </div>
+            </div> -->
+        </div>
+        <div class="carousel-item">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
+            <img class="carousel-image" src="https://wayfarer-pythonic-lava.s3.us-west-1.amazonaws.com/splash/cafe-shop.jpg" />
+            <!-- <div class="container">
+                <div class="carousel-caption text-end">
+                    <h1>Spring Creek</h1>
+                    <p>North Carolina, USA</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+  <!-- MARKETING -->
+<div style="position: relative; width: 0; height: 0"></div>
+  <div class="square square-home"></div>
+</div>
+<div style="position: relative; width: 0; height: 0"></div>
+  <div class="triangle triangle-home"></div>
+</div>
+<div style="position: relative; width: 0; height: 0"></div>
+  <div class="circle circle-home"></div>
+</div>
+<div style="position: relative; width: 0; height: 0"></div>
+    <img class="plant" src="https://wayfarer-pythonic-lava.s3.us-west-1.amazonaws.com/splash/plant.png"  />
+</div>
+
+
+<div class="container marketing">
+
+        <div class="marketing-header">
+            <h1>
+                Snap your travel photos and share like never before
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            </p>
+    
+        </div>
+        <div class="row">
+        <div class="col-lg-4">
+            <div class="card" style="width: 20rem;">
+                <img src="https://wayfarer-pythonic-lava.s3.us-west-1.amazonaws.com/splash/travel-equipment.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="height: 16rem;">
+                <h4 class="card-title text-start">Share your travels</h4>
+                <p class="card-text text-start">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
+                </div>
+            </div>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+            <div class="card" style="width: 20rem;">
+                <img src="https://wayfarer-pythonic-lava.s3.us-west-1.amazonaws.com/splash/hot-air-balloon.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="height: 16rem;">
+                    <h4 class="card-title text-start">Inspire with photos</h4>
+                    <p class="card-text text-start">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
+                </div>
+            </div>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+            <div class="card" style="width: 20rem;">
+                <img src="https://wayfarer-pythonic-lava.s3.us-west-1.amazonaws.com/splash/coney-island.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="height: 16rem;">
+                    <h4 class="card-title text-start">Connect with others</h4>
+                    <p class="card-text text-start">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
+                </div>
+            </div>
+        </div><!-- /.col-lg-4 -->
+
+    </div><!-- /.row -->
+    
+</div><!-- /.container -->
+
+{% endblock %}
