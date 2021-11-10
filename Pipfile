@@ -4,6 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+django = "*"
+psycopg2-binary = "*"
+django-storages = "*"
+boto3 = "*"
+seed = "*"
+django-seed = "*"
+django-crispy-forms = "*"
+gunicorn = "*"
+django-environ = "*"
 
 [dev-packages]
 
