@@ -33,8 +33,8 @@ class AccountView(TemplateView):
 	def dispatch(self, *args, **kwargs):
 		return super().dispatch(*args, **kwargs)
 
-# Allow vendors to update their profile
-def profile_view(request):
+# Function based view allows vendors to update their profile
+def ProfileView(request):
 
 	user = request.user
 	vp = user.vendorprofile
@@ -127,8 +127,8 @@ class SignInView(AjaxFormMixin, FormView):
 
 
 
-# Logout
-def sign_out(request):
+# Function based view for logout/ sign out
+def SignOut(request):
 
 	logout(request)
 	return redirect(reverse('vendors:sign-in'))
