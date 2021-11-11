@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+import os
+from dotenv import load_dotenv
+load_dotenv()  # loads the configs from .env
+ 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z8%x529#nms*8y3mimmh17=bel1re)4p=r@mg^#&2@th=214w7'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'main_app',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -118,9 +125,27 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+
+GOOGLE_API_KEY = str(os.getenv('GOOGLE_API_KEY'))
+
+RECAPTCHA_KEY = str(os.getenv('RECAPTCHA_KEY'))
+
+RECAPTCHA_SECRET_KEY = str(os.getenv('RECAPTCHA_SECRET_KEY'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = "users:sign-in"
+LOGIN_REDIRECT_URL = "users:account"
+LOGOUT_REDIRECT_URL = "users:sign-in"
+
+BASE_COUNTRY = "US"
