@@ -13,6 +13,9 @@ django-seed = "*"
 django-crispy-forms = "*"
 gunicorn = "*"
 django-environ = "*"
+django-google-maps = "*"
+python-dotenv = "*"
+requests = "*"
 
 [dev-packages]
 
