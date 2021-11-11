@@ -8,7 +8,8 @@ class VendorProfile(models.Model):
   # VendorProfile model extends the built-in Django User Model
   
   user = models.OneToOneField(User, on_delete=models.CASCADE)
-  company_name = models.CharField(max_length=255)
+  company_name = models.CharField(max_length=100)
+  image = models.FileField(blank=True, null=True, upload_to='vendor_profile/')
   timestamp = models.DateTimeField(auto_now_add=True)
   updated = models.DateTimeField(auto_now=True)
   

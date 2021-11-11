@@ -36,7 +36,7 @@ def reCAPTCHAValidation(token):
 
 def RedirectParams(**kwargs):
 
-	# Used to append url parameters when redirecting users
+	# Used to append url parameters when redirecting vendors
 	
 	url = kwargs.get("url")
 	params = kwargs.get("params")
@@ -130,7 +130,7 @@ def Directions(*args, **kwargs):
 	return {
 		"origin": origin,
 		"destination": destination,
-		"distance": f"{round(distance/1000, 2)} Km",
+		"distance": f"{round(distance/1000, 2)} miles",
 		"duration": format_timespan(duration),
 		"route": route_list
 		}

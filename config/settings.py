@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'main_app',
-    'users',
+    'vendors',
 ]
 
 MIDDLEWARE = [
@@ -144,8 +144,8 @@ RECAPTCHA_SECRET_KEY = str(os.getenv('RECAPTCHA_SECRET_KEY'))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = "users:sign-in"
-LOGIN_REDIRECT_URL = "users:account"
-LOGOUT_REDIRECT_URL = "users:sign-in"
+LOGIN_URL = "vendors:sign-in"
+LOGIN_REDIRECT_URL = "vendors:account"
+LOGOUT_REDIRECT_URL = "vendors:sign-in"
 
 BASE_COUNTRY = "US"

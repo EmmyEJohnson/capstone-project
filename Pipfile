@@ -16,6 +16,7 @@ django-environ = "*"
 django-google-maps = "*"
 python-dotenv = "*"
 requests = "*"
+humanfriendly = "*"
 
 [dev-packages]
 
