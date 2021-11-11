@@ -21,6 +21,7 @@ from config.mixins import(
 
 # Create your views here.
 
+# Global default messages
 result = "Error"
 message = "There was an error, please try again"
 
@@ -99,7 +100,7 @@ class SignUpView(AjaxFormMixin, FormView):
 
 		return response
 
-# Sign in
+# Vendor sign in/ login
 class SignInView(AjaxFormMixin, FormView):
 
 	template_name = "vendors/sign_in.html"
@@ -112,7 +113,7 @@ class SignInView(AjaxFormMixin, FormView):
 			username = form.cleaned_data.get('username')
 			password = form.cleaned_data.get('password')
    
-			#Authenticate user
+			#Authenticate vendor
 			user = authenticate(self.request, username=username, password=password)
 			if user is not None:
 				login(self.request, user, backend='django.contrib.auth.backends.ModelBackend')
