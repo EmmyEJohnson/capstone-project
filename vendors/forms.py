@@ -41,6 +41,7 @@ class VendorAuthForm(AuthenticationForm):
   
 class VendorProfileForm(forms.ModelForm):
   
+  company_name = forms.CharField(max_length=100, required= True, widget=forms.HiddenInput())
   address = forms.CharField(max_length=100, required=True, widget = forms.HiddenInput())
   city = forms.CharField(max_length=100, required= True, widget = forms.HiddenInput())
   state = forms.CharField(max_length=100, required= True, widget = forms.HiddenInput())
@@ -51,7 +52,7 @@ class VendorProfileForm(forms.ModelForm):
   
   class Meta:
     model = VendorProfile
-    fields = ('address', 'city', 'state', 'zip_code', 'country', 'longitude', 'latitude', )
+    fields = ('company_name', 'address', 'city', 'state', 'zip_code', 'country', 'longitude', 'latitude', )
 
 
 
