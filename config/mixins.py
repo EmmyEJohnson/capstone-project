@@ -36,7 +36,7 @@ def reCAPTCHAValidation(token):
 
 def RedirectParams(**kwargs):
 
-	# Used to append url parameters when redirecting vendors
+	# Used to append url parameters when redirecting 
 	
 	url = kwargs.get("url")
 	params = kwargs.get("params")

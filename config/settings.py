@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 import os
+
 from dotenv import load_dotenv
 load_dotenv()  # loads the configs from .env
  
@@ -62,7 +63,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'templates'
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -144,8 +147,9 @@ RECAPTCHA_SECRET_KEY = str(os.getenv('RECAPTCHA_SECRET_KEY'))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = "vendors:sign-in"
-LOGIN_REDIRECT_URL = "vendors:account"
-LOGOUT_REDIRECT_URL = "vendors:sign-in"
+# Vendor Side
+LOGIN_URL = "vendors:vendor_sign_in"
+LOGIN_REDIRECT_URL = "vendors:vendor_account"
+LOGOUT_REDIRECT_URL = "vendors:vendor_sign_in"
 
 BASE_COUNTRY = "US"

@@ -10,7 +10,7 @@ class VendorCreationForm(UserCreationForm):
   first_name = forms.CharField(max_length=50, required=True,
     widget=forms.TextInput(attrs={'placeholder': '*Name of business'}))
   last_name = forms.CharField(max_length=50, required=False,
-    widget=forms.TextInput(attrs={'placeholder': '*Name of business'}))
+    widget=forms.TextInput(attrs={'placeholder': '*Slogan'}))
   username = forms.EmailField(max_length=254, required=True, 
     widget=forms.TextInput(attrs={'placeholder': '*Email..'}))
   password1 = forms.CharField(
@@ -55,6 +55,12 @@ class VendorProfileForm(forms.ModelForm):
     fields = ('company_name', 'address', 'city', 'state', 'zip_code', 'country', 'longitude', 'latitude', )
 
 
+# Upload image for vendor
+class VendorProfileLogoForm(ModelForm):
+
+    class Meta:
+        model = VendorProfile
+        fields = ('image',)
 
 
 
