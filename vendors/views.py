@@ -27,17 +27,17 @@ message = "There was an error, please try again"
 
 # Display vendor account page
 class AccountView(TemplateView):
-	template_name = "vendors/account.html"
+	template_name = "vendors/vendor_account.html"
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super().dispatch(*args, **kwargs)
 
-# Function based view allows vendors to update their profile
+# Function based view allows vendors to update profile
 def ProfileView(request):
 
 	user = request.user
-	vp = user.vendorprofile
+	vp = user.vendor_profile
 
 	form = VendorProfileForm(instance = vp) 
 
@@ -60,11 +60,11 @@ def ProfileView(request):
 		context['google_api_key'] = settings.GOOGLE_API_KEY
 		context['base_country'] = settings.BASE_COUNTRY
 
-		return render(request, 'vendors/profile.html', context)
+		return render(request, 'vendors/vendor_profile.html', context)
 
 # Vendor sign-up with reCapture security
 class SignUpView(AjaxFormMixin, FormView):
-	template_name = "vendors/sign_up.html"
+	template_name = "vendors/vendor_sign_up.html"
 	form_class = VendorCreationForm
 	success_url = "/"
 
@@ -103,7 +103,7 @@ class SignUpView(AjaxFormMixin, FormView):
 # Vendor sign in/ login
 class SignInView(AjaxFormMixin, FormView):
 
-	template_name = "vendors/sign_in.html"
+	template_name = "vendors/vendor_sign_in.html"
 	form_class = VendorAuthForm
 	success_url = "/"
 
