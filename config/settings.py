@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 import os
+
 from dotenv import load_dotenv
 load_dotenv()  # loads the configs from .env
  
@@ -62,7 +63,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'templates'
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
