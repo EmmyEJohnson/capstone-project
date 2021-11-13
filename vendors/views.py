@@ -4,13 +4,15 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.conf import settings
 from django.http import JsonResponse
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, UpdateView
 from django.views.generic.base import TemplateView
 from django.utils.decorators import method_decorator
+from .models import VendorProfile
 from .forms import (
   VendorCreationForm, 
   VendorAuthForm, 
-  VendorProfileForm
+  VendorProfileForm,
+  VendorProfileLogoForm
   )
 from config.mixins import(
 	AjaxFormMixin, 
@@ -61,6 +63,14 @@ def ProfileView(request):
 		context['base_country'] = settings.BASE_COUNTRY
 
 		return render(request, 'vendors/vendor_profile.html', context)
+
+class ProfilePictureUpdate(UpdateView):
+    model = VendorProfile
+    form_class = VendorProfileLogoForm
+    template_name = "vendor_image_update.html"
+    
+    def get_success_url(self):
+        return reverse('profile', kwargs={'pk': self.object.pk})
 
 # Vendor sign-up with reCapture security
 class SignUpView(AjaxFormMixin, FormView):
