@@ -1,4 +1,4 @@
-# capstone-project
+# General Assembly - Capstone Project
 
 
 
