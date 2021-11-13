@@ -81,7 +81,7 @@ class SignUpView(AjaxFormMixin, FormView):
 	#reCAPTURE key required in context
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
-		context["recaptcha_site_key"] = settings.RECAPTCHA_PUBLIC_KEY
+		context["recaptcha_site_key"] = settings.RECAPTCHA_KEY
 		return context
 
 	#Mixin logic to get, check and save reCAPTURE score

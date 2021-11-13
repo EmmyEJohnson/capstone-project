@@ -147,6 +147,8 @@ RECAPTCHA_SECRET_KEY = str(os.getenv('RECAPTCHA_SECRET_KEY'))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Home page
+
 # Vendor Side
 LOGIN_URL = "vendors:vendor_sign_in"
 LOGIN_REDIRECT_URL = "vendors:vendor_account"
