@@ -29,7 +29,7 @@
             <p class="profile-userinfo-headers"><span class="profile-userinfo">{{vendor_profile.user.last_name}}</p></p>
             <p class="profile-userinfo-headers"> Joined <span class="profile-userinfo">{{vendor_profile.user.date_joined|date:"M Y" }}</span></p>
             {% if user.username == vendor_profile.user.username %}
-            <a class="profile-edit-button-link" href="{% url 'profile_update' user.pk %}">
+            <a class="profile-edit-button-link" href="{% url 'vendor_profile_update' user.pk %}">
                 <div class="profile-edit-button">
                     EDIT PROFILE
                 </div>
@@ -70,7 +70,7 @@
 
   <input type="text" placeholder="*Begin typing address" id="id-google-address" name="google_address">
 
-  <form id="vendorprofileform" method="POST" action="/vendor_profile">
+  <form id="profileform" method="POST" action="/vendor_profile">
     {% csrf_token %}
 
    <label for="address" class="hidden-el" hidden> Address </label>

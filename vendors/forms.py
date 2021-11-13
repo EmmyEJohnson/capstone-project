@@ -8,15 +8,15 @@ from .models import VendorProfile
 class VendorCreationForm(UserCreationForm):
   
   first_name = forms.CharField(max_length=50, required=True,
-    widget=forms.TextInput(attrs={'placeholder': '*Name of business'}))
+    widget=forms.TextInput(attrs={'placeholder': 'Name of Business'}))
   last_name = forms.CharField(max_length=50, required=False,
-    widget=forms.TextInput(attrs={'placeholder': '*Slogan'}))
+    widget=forms.TextInput(attrs={'placeholder': 'Slogan'}))
   username = forms.EmailField(max_length=254, required=True, 
-    widget=forms.TextInput(attrs={'placeholder': '*Email..'}))
+    widget=forms.TextInput(attrs={'placeholder': 'Email'}))
   password1 = forms.CharField(
-    widget=forms.PasswordInput(attrs={'placeholder': '*Password..', 'class': 'password'}))
+    widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'password'}))
   password2 = forms.CharField(
-    widget=forms.PasswordInput(attrs={'placeholder': '*Confirm Password..', 'class': 'password'}))
+    widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password', 'class': 'password'}))
 
   #reCAPTCHA token
   token = forms.CharField(
@@ -30,9 +30,9 @@ class VendorCreationForm(UserCreationForm):
 class VendorAuthForm(AuthenticationForm):
   
   username = forms.EmailField(max_length=254, required=True,
-    widget=forms.TextInput(attrs={'placeholder': '*Email..'}))
+    widget=forms.TextInput(attrs={'placeholder': 'Email'}))
   password = forms.CharField(
-    widget = forms.PasswordInput(attrs={'placeholder': '*Password..', 'class': 'password'}))
+    widget = forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'password'}))
   
   class Meta:
     model = User
