@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'main_app',
+    'cart',
+    'home',
+    'inventory',
+    'orders',
     'vendors',
 ]
 
@@ -63,9 +66,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            'templates'
-            ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,13 +134,14 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#GOOGLE KEYS
 GOOGLE_API_KEY = str(os.getenv('GOOGLE_API_KEY'))
-
-RECAPTCHA_KEY = str(os.getenv('RECAPTCHA_KEY'))
-
+RECAPTCHA_SITE_KEY = str(os.getenv('RECAPTCHA_KEY'))
 RECAPTCHA_SECRET_KEY = str(os.getenv('RECAPTCHA_SECRET_KEY'))
 
 # Default primary key field type
@@ -147,11 +149,20 @@ RECAPTCHA_SECRET_KEY = str(os.getenv('RECAPTCHA_SECRET_KEY'))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Home page
+STRIPE_PUB_KEY = 'pk_test_51HIHiuKBJV2qfWbD2gQe6aqanfw6Eyul5P02KeOuSR1UMuaV4TxEtaQyzr9DbLITSZweL7XjK3p74swcGYrE2qEX00Hz7GmhMI'
+STRIPE_SECRET_KEY = 'sk_test_51HIHiuKBJV2qfWbD4I9pAODack7r7r9LJOY65zSFx7jUUwgy2nfKEgQGvorv1p2xP7tgMsJ5N9EW7K1lBdPnFnyK00kdrS27cj'
 
-# Vendor Side
-LOGIN_URL = "vendors:vendor_sign_in"
-LOGIN_REDIRECT_URL = "vendors:vendor_account"
-LOGOUT_REDIRECT_URL = "vendors:vendor_sign_in"
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'vendor_admin'
+LOGOUT_REDIRECT_URL = 'frontpage'
 
-BASE_COUNTRY = "US"
+SESSION_COOKIE_AGE = 86400
+CART_SESSION_ID = 'cart'
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_EMAIL_FROM = 'Interiorstore <noreply@codewithstein.com>'
+

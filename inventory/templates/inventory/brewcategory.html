@@ -1,0 +1,15 @@
+{% extends 'home/base.html' %}
+
+{% block title %}{{ brewcategory.title }} | {% endblock %}
+
+{% block content %}
+    <div class="columns is-multiline mb-6">
+        <div class="column is-12 has-text-centered mt-6 mb-6">
+            <h2 class="is-size-3">{{ brewcategory.title }}</h2>
+        </div>
+
+        {% for inventory in brewcategory.inventory.all %}
+            {% include 'inventory/brews/list_item.html' %}
+        {% endfor %}
+    </div>
+{% endblock %}

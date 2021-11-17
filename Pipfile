@@ -17,6 +17,9 @@ django-google-maps = "*"
 python-dotenv = "*"
 requests = "*"
 humanfriendly = "*"
+django-s3direct = "*"
+pillow = "*"
+stripe = "*"
 
 [dev-packages]
 
